@@ -1,6 +1,6 @@
-const express = require('express')
-const app = express()
-const port = 8080
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 8080;
 
 app.use('/api', require('./server/routers/containers.router')());
 
