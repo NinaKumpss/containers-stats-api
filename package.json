@@ -1,0 +1,25 @@
+{
+  "name": "containers-stats-api",
+  "version": "1.0.0",
+  "description": "API for Docker containers stats",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js --watch server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NinaKumpss/containers-stats-api.git"
+  },
+  "author": "Nina Kumps",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NinaKumpss/containers-stats-api/issues"
+  },
+  "homepage": "https://github.com/NinaKumpss/containers-stats-api#readme",
+  "dependencies": {
+    "dockerstats": "^2.4.1",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "prom-client": "^14.2.0"
+  }
+}

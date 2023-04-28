@@ -1,0 +1,16 @@
+# Dependency directories
+node_modules
+
+# Dependency version locking
+package-lock.json
+
+# Optimized production bundle
+public
+
+# macOS
+.DS_Store
+
+# Visual Studio Code
+jsconfig.json
+.vscode
+.env
