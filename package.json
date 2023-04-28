@@ -4,7 +4,8 @@
   "description": "API for Docker containers stats",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js --watch server"
+    "start": "nodemon server.js --watch server",
+    "build": "node server.js"
   },
   "repository": {
     "type": "git",
