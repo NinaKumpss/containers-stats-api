@@ -1,6 +1,5 @@
 const { updateMetrics } = require('../prometheus/metrics');
 const { getRegistryContentType, getRegistryMetrics } = require('../prometheus/registry');
-const { dockerContainers } = require('dockerstats');
 
 const getMetrics = async (req, res) => {
   await updateMetrics();

@@ -1,10 +1,11 @@
 const { setCounterLabelNameValue, clearRegistry } = require('./registry');
-const { dockerContainers } = require('dockerstats');
+const { dockerContainers, dockerInfo } = require('dockerstats');
 
 async function updateMetrics() {
     clearRegistry();
 
     await updateContainersPort();
+    await updateContainersState();
 }
 
 async function updateContainersPort() {
@@ -25,6 +26,17 @@ async function updateContainersPort() {
 
             setCounterLabelNameValue("containers_port", { name: name, image: image }, port);
         }
+    } catch (e) {
+        console.log(e)
+    }
+}
+
+async function updateContainersState() {
+    try {
+        const data = await dockerInfo();
+        setCounterLabelNameValue("containers_state", { state: 'running' }, data.containersRunning);
+        setCounterLabelNameValue("containers_state", { state: 'paused' }, data.containersPaused);
+        setCounterLabelNameValue("containers_state", { state: 'stopped' }, data.containersStopped);
     } catch (e) {
         console.log(e)
     }

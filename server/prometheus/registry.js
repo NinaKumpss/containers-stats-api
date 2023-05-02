@@ -4,6 +4,7 @@ const { Counter } = require('prom-client');
 let registry = new promClient.Registry();
 
 addCounter('containers_port', 'The containers port', ['name', 'image']);
+addCounter('containers_state', 'The containers state', ['state']);
 
 function addCounter(name, help, labelNames) {
     try {
